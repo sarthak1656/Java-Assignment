@@ -30,3 +30,9 @@ public class Assignment_2 {
 
     }
 }
+
+
+// Enter the marks of the student separated by spaces:
+// 20 30 15 22 13 2
+// Total Marks: 102
+// Average Marks: 17.0

@@ -41,3 +41,9 @@ public class HCFCalculator {
         scanner.close();
     }
 }
+
+
+// Enter the number of elements (at least 2): 3
+// Enter the numbers:
+// 2 4 6
+// HCF: 2

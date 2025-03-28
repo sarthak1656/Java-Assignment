@@ -16,3 +16,8 @@ public class DinosaurAttributes {
     }
 }
 
+
+// Dinosaur Attributes:
+// Length: 12.5 meters
+// Weight: 5000.75 kg
+// Height: 5.8 meters

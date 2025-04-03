@@ -17,3 +17,8 @@ public class EvenOdd {
         }
     }
 }
+
+// Even numbers:
+// 10 22 44 
+// Odd numbers:
+// 15 37

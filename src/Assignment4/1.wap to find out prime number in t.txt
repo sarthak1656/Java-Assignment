@@ -1,0 +1,16 @@
+1.wap to find out prime number in the range of 1 to n by using loop, break and continue.
+2.Multiplication table of n numbers using while, do while and for loop.
+3.demonstrate a concept of label.
+4.wap to do the following operation in a given array:(Menu driven program)
+ a. Insertion at any given position.
+ b. deletion at a given position.
+ c. search linear and binary
+ d. sort
+ if the user say yes repeat the menu will be displayed. 
+5.wap to take 3d element and display it.
+6.wap to order a list of string alphabetically.
+7.wap to find a particular letter of character present in a string if it is present display it position otherwise -1.
+8.wap to demonstrate wrapper class.
+9.wap to print Fibonacci series up to n with both recursive and non recursive.
+10.factorial of a given number by using recur and without recur.
+11.Qs of theory assignment

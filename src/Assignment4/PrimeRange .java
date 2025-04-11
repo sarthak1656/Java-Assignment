@@ -27,3 +27,12 @@ public class PrimeRange {
 
     }
 } 
+
+
+
+// Enter the range of prime numbers:
+// 5
+// The prime numbers between 1 and 5 are:
+// 2
+// 3
+// 5

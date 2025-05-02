@@ -1,69 +1,117 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArrayOperations {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr = new int[100];
-        int size = 0;
+        int[] arr = new int[100]; // initial size
+        int n = 0; // current size of array
 
-        while (true) {
+        boolean repeat = true;
+
+        while (repeat) {
             System.out.println("\nMenu:");
-            System.out.println("1. Insert");
-            System.out.println("2. Delete");
-            System.out.println("3. Search");
-            System.out.println("4. Sort");
-            System.out.println("5. Exit");
-            System.out.print("Choose an option: ");
+            System.out.println("1. Insertion at any given position");
+            System.out.println("2. Deletion at any given position");
+            System.out.println("3. Linear Search");
+            System.out.println("4. Binary Search");
+            System.out.println("5. Sort");
+            System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 1 -> {
+                case 1:
                     System.out.print("Enter element to insert: ");
-                    int val = sc.nextInt();
-                    System.out.print("Enter position: ");
+                    int elem = sc.nextInt();
+                    System.out.print("Enter position (0 to " + n + "): ");
                     int pos = sc.nextInt();
-                    for (int i = size; i > pos; i--) arr[i] = arr[i - 1];
-                    arr[pos] = val;
-                    size++;
-                    System.out.println("Inserted.");
-                }
-                case 2 -> {
-                    System.out.print("Enter position to delete: ");
-                    int pos = sc.nextInt();
-                    for (int i = pos; i < size - 1; i++) arr[i] = arr[i + 1];
-                    size--;
-                    System.out.println("Deleted.");
-                }
-                case 3 -> {
-                    System.out.print("Enter element to search: ");
-                    int key = sc.nextInt();
-                    // Linear Search
+                    if (pos < 0 || pos > n) {
+                        System.out.println("Invalid position!");
+                    } else {
+                        for (int i = n; i > pos; i--) {
+                            arr[i] = arr[i - 1];
+                        }
+                        arr[pos] = elem;
+                        n++;
+                        System.out.println("Element inserted.");
+                    }
+                    break;
+
+                case 2:
+                    System.out.print("Enter position to delete (0 to " + (n - 1) + "): ");
+                    int delPos = sc.nextInt();
+                    if (delPos < 0 || delPos >= n) {
+                        System.out.println("Invalid position!");
+                    } else {
+                        for (int i = delPos; i < n - 1; i++) {
+                            arr[i] = arr[i + 1];
+                        }
+                        n--;
+                        System.out.println("Element deleted.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.print("Enter element to search (linear search): ");
+                    int searchElem = sc.nextInt();
                     boolean found = false;
-                    for (int i = 0; i < size; i++) {
-                        if (arr[i] == key) {
-                            System.out.println("Found at index " + i + " using Linear Search.");
+                    for (int i = 0; i < n; i++) {
+                        if (arr[i] == searchElem) {
+                            System.out.println("Element found at index " + i);
                             found = true;
                             break;
                         }
                     }
-                    if (!found) System.out.println("Not found.");
+                    if (!found) {
+                        System.out.println("Element not found.");
+                    }
+                    break;
 
-                    // Binary Search
-                    Arrays.sort(arr, 0, size);
-                    int res = Arrays.binarySearch(arr, 0, size, key);
-                    System.out.println("Binary Search result: " + (res >= 0 ? "Found at index " + res : "Not found"));
-                }
-                case 4 -> {
-                    Arrays.sort(arr, 0, size);
-                    System.out.println("Sorted array:");
-                    for (int i = 0; i < size; i++) System.out.print(arr[i] + " ");
+                case 4:
+                    Arrays.sort(arr, 0, n); // sort before binary search
+                    System.out.print("Enter element to search (binary search): ");
+                    int binaryElem = sc.nextInt();
+                    int low = 0, high = n - 1, mid;
+                    boolean foundBinary = false;
+                    while (low <= high) {
+                        mid = (low + high) / 2;
+                        if (arr[mid] == binaryElem) {
+                            System.out.println("Element found at index " + mid);
+                            foundBinary = true;
+                            break;
+                        } else if (arr[mid] < binaryElem) {
+                            low = mid + 1;
+                        } else {
+                            high = mid - 1;
+                        }
+                    }
+                    if (!foundBinary) {
+                        System.out.println("Element not found.");
+                    }
+                    break;
+
+                case 5:
+                    Arrays.sort(arr, 0, n);
+                    System.out.println("Array sorted: ");
+                    for (int i = 0; i < n; i++) {
+                        System.out.print(arr[i] + " ");
+                    }
                     System.out.println();
-                }
-                case 5 -> System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
             }
 
             System.out.print("Do you want to continue? (yes/no): ");
-            if (!sc.next().equalsIgnoreCase("yes")) break;
+            sc.nextLine(); // consume leftover newline
+            String response = sc.nextLine().trim().toLowerCase();
+            if (!response.equals("yes")) {
+                repeat = false;
+            }
         }
+
+        sc.close();
+        System.out.println("Program exited.");
     }
 }

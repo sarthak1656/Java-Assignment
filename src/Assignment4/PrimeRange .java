@@ -23,6 +23,7 @@ public class PrimeRange {
             }
 
             System.out.println(i);
+            
         }
 
     }

@@ -5,7 +5,7 @@
  a. Insertion at any given position.
  b. deletion at a given position.
  c. search linear and binary 
- d. sort
+ d. sort 
  if the user say yes repeat the menu will be displayed. 
 5.wap to take 3d element and display it.
 6.wap to order a list of string alphabetically.

@@ -28,3 +28,8 @@ public class Television {
     }
 }
 
+
+// Make: Sony
+// Screen Size: 42.5 inches
+// Date of Purchase: 2023-08-21
+// Color TV: Yes

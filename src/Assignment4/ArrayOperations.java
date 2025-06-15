@@ -20,7 +20,15 @@ public class ArrayOperations {
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 1:
+               outer: for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 3; j++) {
+                if (i == 2 && j == 3) {
+                    System.out.println("break outer");
+                    break outer;
+                }
+                System.out.println(i + " " + j);
+            }
+        }         case 1:
                     System.out.print("Enter element to insert: ");
                     int elem = sc.nextInt();
                     System.out.print("Enter position (0 to " + n + "): ");

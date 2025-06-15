@@ -2,10 +2,19 @@ package Assignment4;
 
 public class LabelDemo {
     public static void main(String[] args) {
-        outer:
-        for (int i = 1; i <= 3; i++) {
+        // outer:
+        // for (int i = 1; i <= 3; i++) {
+        // for (int j = 1; j <= 3; j++) {
+        // if (i == 2 && j == 2) {
+        // break outer;
+        // }
+        // System.out.println(i + " " + j);
+        // }
+        // }
+        outer: for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
-                if (i == 2 && j == 2) {
+                if (i == 2 && j == 3) {
+                    System.out.println("break outer");
                     break outer;
                 }
                 System.out.println(i + " " + j);
@@ -18,4 +27,3 @@ public class LabelDemo {
 // 1 2
 // 1 3
 // 2 1
- 

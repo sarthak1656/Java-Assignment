@@ -8,31 +8,52 @@ public class MultiplicationTable {
         System.out.print("Enter a number to print its multiplication table: ");
         int n = sc.nextInt();
 
-        System.out.println("using while loop:");
+        // System.out.println("using while loop:");
+        // int i = 1;
+        // while (i <= 10) {
+        // System.out.println(n + " x " + i + " = " + (n * i));
+        // i++;
+        // }
+
+        // System.out.println();
+
+        // System.out.println("using do while loop:");
+        // int j = 1;
+        // do {
+        // System.out.println(n + " x " + j + " = " + (n * j));
+        // j++;
+        // } while (j <= 10);
+
+        // System.out.println();
+
+        // System.out.println("using for loop:");
+        // for (int k = 1; k <= 10; k++) {
+        // System.out.println(n + " x " + k + " = " + (n * k));
+        // }
+
+        System.out.println("mul tble using while");
         int i = 1;
         while (i <= 10) {
-            System.out.println(n + " x " + i + " = " + (n * i));
+            System.out.println(n * i);
             i++;
         }
-
         System.out.println();
-
-        System.out.println("using do while loop:");
+        System.out.println("mul tble using do while");
         int j = 1;
         do {
-            System.out.println(n + " x " + j + " = " + (n * j));
+            System.out.println(n * j);
             j++;
         } while (j <= 10);
-
         System.out.println();
-
-        System.out.println("using for loop:");
+        System.out.println("mul tble using for");
         for (int k = 1; k <= 10; k++) {
-            System.out.println(n + " x " + k + " = " + (n * k));
+            System.out.println(n * k);
         }
+
+
+
     }
 }
-
 
 // using for loop:
 // 5 x 1 = 5
@@ -45,4 +66,3 @@ public class MultiplicationTable {
 // 5 x 8 = 40
 // 5 x 9 = 45
 // 5 x 10 = 50
-
